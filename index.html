@@ -43,6 +43,124 @@
   --rs:       6px;
   --wa-green: #00a884; /* WhatsApp Green */
 }
+body.classic-theme {
+  --ink: #0b0f14;
+  --ink2: #101923;
+  --ink3: #162133;
+  --plate: #13203a;
+  --plate2: #1a2e48;
+  --rim: rgba(255,215,110,0.16);
+  --rim2: rgba(255,215,110,0.24);
+  --rim3: rgba(255,215,110,0.42);
+  --cyan: #7fffd4;
+  --cyan-lo: rgba(127,255,212,0.08);
+  --cyan-md: rgba(127,255,212,0.20);
+  --amber: #ffbf36;
+  --amber-lo: rgba(255,191,54,0.12);
+  --amber-md: rgba(255,191,54,0.28);
+  --red: #ff7a6d;
+  --red-lo: rgba(255,122,109,0.12);
+  --text: #f5f7fb;
+  --text2: #c5d5e9;
+  --text3: #8f9fb4;
+}
+body.classic-theme .card,
+body.classic-theme .m-card,
+body.classic-theme .map-wrap,
+body.classic-theme .login-box {
+  background: linear-gradient(145deg, rgba(12,20,34,0.95) 0%, rgba(19,32,58,0.95) 100%);
+  border-color: rgba(255,255,255,0.08);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px rgba(255,215,110,0.1);
+}
+body.classic-theme .login-title {
+  color: var(--amber);
+  text-shadow: 0 0 10px rgba(255,191,54,0.5);
+}
+body.classic-theme .login-btn {
+  background: linear-gradient(135deg, rgba(255,191,54,0.2) 0%, rgba(255,215,110,0.3) 100%);
+  color: var(--amber);
+  border-color: rgba(255,191,54,0.3);
+}
+body.classic-theme .login-btn:hover {
+  background: linear-gradient(135deg, rgba(255,191,54,0.3) 0%, rgba(255,215,110,0.2) 100%);
+  box-shadow: 0 5px 15px rgba(255,191,54,0.3);
+}
+body.classic-theme .topbar,
+body.classic-theme .nav {
+  background: rgba(10,14,24,0.95);
+  border-color: rgba(255,215,110,0.14);
+}
+body.classic-theme .nav-btn.active {
+  color: var(--amber);
+  border-color: rgba(255,191,54,0.35);
+}
+body.classic-theme .brand-shield {
+  background: rgba(255,191,54,0.1);
+}
+body.classic-theme .chart-outer {
+  background: rgba(255,255,255,0.03);
+  border-color: rgba(255,255,255,0.08);
+}
+body.classic-theme .btn-cyan {
+  border-color: rgba(255,255,255,0.12);
+}
+body.classic-theme .btn-danger {
+  background: rgba(255,97,108,0.15);
+  border-color: rgba(255,97,108,0.18);
+  color: #ffc1c6;
+}
+body.high-contrast-theme {
+  --ink: #05090f;
+  --ink2: #08111d;
+  --ink3: #0b1523;
+  --plate: #0f1a2d;
+  --plate2: #132339;
+  --rim: rgba(255,255,255,0.18);
+  --rim2: rgba(255,255,255,0.28);
+  --rim3: rgba(255,255,255,0.45);
+  --cyan: #62fff7;
+  --cyan-lo: rgba(98,255,247,0.10);
+  --cyan-md: rgba(98,255,247,0.22);
+  --amber: #ffd43f;
+  --amber-lo: rgba(255,212,63,0.14);
+  --red: #ff6e5e;
+  --text: #f7fbff;
+  --text2: #b8d2f3;
+  --text3: #8aa6ca;
+}
+body.high-contrast-theme .card,
+body.high-contrast-theme .m-card,
+body.high-contrast-theme .map-wrap,
+body.high-contrast-theme .login-box {
+  background: linear-gradient(145deg, rgba(18,28,45,0.98) 0%, rgba(15,26,45,0.98) 100%);
+  border-color: rgba(255,255,255,0.12);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.7), 0 0 20px rgba(98,255,247,0.15);
+}
+body.high-contrast-theme .login-title {
+  color: var(--cyan);
+  text-shadow: 0 0 10px rgba(98,255,247,0.5);
+}
+body.high-contrast-theme .login-btn {
+  background: linear-gradient(135deg, rgba(98,255,247,0.22) 0%, rgba(98,255,247,0.35) 100%);
+  color: var(--cyan);
+  border-color: rgba(98,255,247,0.3);
+}
+body.high-contrast-theme .login-btn:hover {
+  background: linear-gradient(135deg, rgba(98,255,247,0.35) 0%, rgba(98,255,247,0.22) 100%);
+  box-shadow: 0 5px 15px rgba(98,255,247,0.4);
+}
+body.high-contrast-theme .topbar,
+body.high-contrast-theme .nav {
+  background: rgba(8,12,20,0.98);
+  border-color: rgba(255,255,255,0.18);
+}
+body.high-contrast-theme .nav-btn.active {
+  color: var(--cyan);
+  border-color: rgba(98,255,247,0.45);
+}
+body.high-contrast-theme .brand-shield {
+  background: rgba(98,255,247,0.12);
+}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{font-size:16px;-webkit-tap-highlight-color:transparent;}
 body{font-family:var(--body);background:var(--ink);color:var(--text);min-height:100dvh;overflow-x:hidden;position:relative;}
@@ -58,11 +176,18 @@ body::after{content:'';position:fixed;inset:0;z-index:1;
   pointer-events:none;}
 
 /* ── LOGIN OVERLAY ── */
-#login-overlay{position:fixed;inset:0;z-index:9999;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px;}
-.login-box{width:100%;max-width:380px;background:var(--plate2);border:1px solid var(--rim);border-radius:var(--r);padding:24px;}
-.login-title{font-family:var(--orb);color:var(--cyan);text-align:center;margin-bottom:20px;letter-spacing:2px;}
-.login-select{width:100%;padding:12px;background:var(--ink3);border:1px solid var(--rim);color:var(--text);font-family:var(--mono);border-radius:var(--rs);margin-bottom:15px;appearance:none;}
-.login-btn{width:100%;padding:12px;background:var(--cyan-md);color:var(--cyan);border:1px solid var(--rim2);font-family:var(--mono);font-weight:700;cursor:pointer;border-radius:var(--rs);text-transform:uppercase;}
+#login-overlay{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg, var(--ink) 0%, var(--plate) 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px;backdrop-filter:blur(10px);}
+.login-box{width:100%;max-width:420px;background:linear-gradient(145deg, var(--plate2) 0%, var(--plate) 100%);border:1px solid var(--rim);border-radius:16px;padding:32px;box-shadow:0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(0,210,255,0.1);position:relative;overflow:hidden;}
+.login-box::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 50% 0%, rgba(0,210,255,0.05), transparent 70%);pointer-events:none;}
+.login-title{font-family:var(--orb);color:var(--cyan);text-align:center;margin-bottom:24px;letter-spacing:3px;font-size:20px;text-shadow:0 0 10px rgba(0,210,255,0.5);position:relative;z-index:1;}
+.login-select{width:100%;padding:14px 16px;background:var(--ink3);border:1px solid var(--rim);color:var(--text);font-family:var(--mono);border-radius:8px;margin-bottom:16px;appearance:none;transition:all 0.3s ease;outline:none;position:relative;z-index:1;}
+.login-select:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(0,210,255,0.2);background:var(--plate);}
+.login-btn{width:100%;padding:14px;background:linear-gradient(135deg, var(--cyan-md) 0%, rgba(0,210,255,0.3) 100%);color:var(--cyan);border:1px solid var(--rim2);font-family:var(--mono);font-weight:700;cursor:pointer;border-radius:8px;text-transform:uppercase;margin-bottom:12px;transition:all 0.3s ease;position:relative;z-index:1;overflow:hidden;}
+.login-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);transition:left 0.5s;}
+.login-btn:hover::before{left:100%;}
+.login-btn:hover{background:linear-gradient(135deg, rgba(0,210,255,0.4) 0%, var(--cyan-md) 100%);transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,210,255,0.3);}
+.login-btn:last-of-type{margin-bottom:0;}
+#install-hint{font-size:11px;color:var(--text2);margin-top:16px;line-height:1.5;text-align:center;position:relative;z-index:1;}
 
 /* ── TOPBAR ── */
 .topbar{position:sticky;top:0;z-index:200;height:58px;
@@ -147,6 +272,10 @@ body::after{content:'';position:fixed;inset:0;z-index:1;
 .b-info{background:var(--cyan-lo);color:var(--cyan);border:1px solid var(--rim2);}
 .b-info .badge-dot{background:var(--cyan);}
 
+/* ── RISK GAUGE ── */
+.risk-gauge{position:relative;width:60px;height:8px;background:#333;border-radius:4px;margin:0 auto;overflow:hidden;}
+.risk-gauge > div{height:100%;border-radius:4px;transition:width 0.3s ease;}
+
 /* ── SENSOR ROWS ── */
 .s-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--rim);}
 .s-row:last-child{border-bottom:none;}
@@ -219,6 +348,14 @@ body::after{content:'';position:fixed;inset:0;z-index:1;
 
 /* ── DIVIDER ── */
 .div{height:1px;background:var(--rim);margin:18px 0;}
+
+.engineer-header{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-end;margin-bottom:16px;}
+.engineer-header-title{font-size:11px;font-family:var(--mono);color:var(--text3);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.engineer-header-copy{font-size:16px;font-family:var(--orb);font-weight:700;color:var(--cyan);}
+.engineer-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 14px;border-radius:var(--rs);border:1px solid var(--rim);background:var(--ink3);}
+.engineer-name{font-size:13px;font-weight:600;color:var(--text);}
+.engineer-meta{font-size:11px;font-family:var(--mono);color:var(--text2);margin-top:4px;}
+.engineer-row .badge{font-size:10px;padding:4px 8px;}
 
 /* ── TABLE ── */
 .tbl{width:100%;border-collapse:collapse;font-size:12px;}
@@ -363,6 +500,40 @@ body::after{content:'';position:fixed;inset:0;z-index:1;
     <div class="m-card c-teal"><div class="m-label">System</div><div class="m-val" id="m-up">100%</div><div class="m-sub">Uptime 24h</div></div>
   </div>
 
+  <div class="card" id="dash-quick-actions" style="margin-bottom:14px">
+    <div class="sec-head" style="margin-bottom:12px"><div class="sec-head-line"></div><div class="sec-title">QUICK ACTIONS</div></div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+      <button class="btn btn-ghost" onclick="refreshDashboard()">REFRESH DASHBOARD</button>
+      <button class="btn btn-danger" onclick="muteAlarm()">MUTE ALARM</button>
+      <button class="btn btn-ghost" onclick="showPage('alerts', document.getElementById('nav-alerts'))">VIEW ALERTS</button>
+      <button class="btn btn-ghost" onclick="applyDashboardTheme(document.getElementById('theme-select').value || 'modern')">APPLY THEME</button>
+    </div>
+  </div>
+
+  <div class="card" id="engineer-panel" style="margin-bottom:14px">
+    <div class="sec-head" style="margin-bottom:14px"><div class="sec-head-line"></div><div class="sec-title">FIELD ENGINEER AVAILABILITY</div></div>
+    <div class="engineer-header">
+      <div>
+        <div class="engineer-header-title">Team status</div>
+        <div class="engineer-header-copy" id="engineer-availability">14 On Duty · 0 En Route · 0 Off Shift</div>
+      </div>
+      <div>
+        <div class="engineer-header-title">Average response time</div>
+        <div class="engineer-header-copy" id="engineer-response">— min</div>
+      </div>
+    </div>
+    <div id="engineer-list" style="display:grid;gap:10px;margin-top:14px"></div>
+    <div class="div"></div>
+    <div id="assignment-controls" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:end;margin-top:10px">
+      <div class="f-group"><label class="f-label">Engineer</label><select class="f-select" id="assign-engineer"></select></div>
+      <div class="f-group"><label class="f-label">Incident</label><select class="f-select" id="assign-incident"></select></div>
+    </div>
+    <div id="assignment-buttons" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+      <button class="btn btn-cyan" onclick="assignSelectedEngineer()">ASSIGN / REASSIGN ENGINEER</button>
+      <button class="btn btn-ghost" onclick="clearSelectedEngineerAssignment()">CLEAR ASSIGNMENT</button>
+    </div>
+  </div>
+
   <div class="card" style="margin-bottom:14px">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
       <div class="sec-head" style="margin-bottom:0"><div class="sec-head-line"></div><div class="sec-title">LIVE OIL CONCENTRATION</div></div>
@@ -376,11 +547,11 @@ body::after{content:'';position:fixed;inset:0;z-index:1;
   </div>
 
   <div class="g2" style="margin-bottom:14px">
-    <div class="card">
+    <div class="card" id="hotspot-panel">
       <div class="sec-head" style="margin-bottom:12px"><div class="sec-head-line"></div><div class="sec-title">HOTSPOT SENSORS</div></div>
       <div id="hotspot-sensors"></div>
     </div>
-    <div class="card" style="display:flex;flex-direction:column;gap:14px">
+    <div class="card" id="dash-status-panel" style="display:flex;flex-direction:column;gap:14px">
       <div class="sec-head" style="margin-bottom:0"><div class="sec-head-line"></div><div class="sec-title">DETECTION STATUS</div></div>
       <div style="display:flex;align-items:center;gap:16px">
         <div class="sonar-wrap">
@@ -398,7 +569,7 @@ body::after{content:'';position:fixed;inset:0;z-index:1;
     </div>
   </div>
 
-  <div class="card">
+  <div class="card" id="log-panel">
     <div class="sec-head" style="margin-bottom:10px"><div class="sec-head-line"></div><div class="sec-title">SYSTEM LOG</div></div>
     <div class="sys-log" id="sys-log"></div>
   </div>
@@ -485,6 +656,7 @@ body::after{content:'';position:fixed;inset:0;z-index:1;
     <div style="display:flex;gap:8px;flex-wrap:wrap">
       <button class="btn btn-cyan" onclick="exportCSV()">EXPORT CSV</button>
       <button class="btn btn-ghost" onclick="exportJSON()">EXPORT JSON</button>
+      <button class="btn btn-primary" onclick="exportPDF()">EXPORT PDF REPORT</button>
     </div>
   </div>
 </section>
@@ -505,11 +677,26 @@ body::after{content:'';position:fixed;inset:0;z-index:1;
       <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;font-family:var(--mono)"><input type="checkbox" id="n-audio" checked style="accent-color:var(--cyan);width:14px;height:14px"> Audible Alarm</label>
     </div>
   </div>
+  <div class="sec-head"><div class="sec-head-line"></div><div class="sec-title">DASHBOARD CUSTOMIZATION</div></div>
+  <div class="card" style="margin-bottom:14px">
+    <div class="f-group"><label class="f-label">Dashboard Theme</label><select class="f-select" id="theme-select" onchange="applyDashboardTheme(this.value)">
+      <option value="modern">Modern</option>
+      <option value="classic">Classic</option>
+      <option value="high-contrast">High Contrast</option>
+    </select></div>
+    <div style="display:grid;gap:10px;margin-top:10px">
+      <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;font-family:var(--mono)"><input type="checkbox" id="show-hotspots" onchange="toggleDashboardPanel('showHotspots')" checked style="accent-color:var(--cyan);width:14px;height:14px"> Show Hotspot Panel</label>
+      <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;font-family:var(--mono)"><input type="checkbox" id="show-status" onchange="toggleDashboardPanel('showStatus')" checked style="accent-color:var(--cyan);width:14px;height:14px"> Show Detection Status</label>
+      <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;font-family:var(--mono)"><input type="checkbox" id="show-log" onchange="toggleDashboardPanel('showLog')" checked style="accent-color:var(--cyan);width:14px;height:14px"> Show System Log</label>
+      <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;font-family:var(--mono)"><input type="checkbox" id="show-quick-actions" onchange="toggleDashboardPanel('showQuickActions')" checked style="accent-color:var(--cyan);width:14px;height:14px"> Show Quick Actions</label>
+    </div>
+  </div>
   <div class="sec-head"><div class="sec-head-line"></div><div class="sec-title">SIMULATION</div></div>
   <div class="card" style="margin-bottom:14px">
     <div style="display:flex;gap:8px;flex-wrap:wrap">
       <button class="btn btn-danger" onclick="simSpill()">SIMULATE SPILL</button>
-      <button class="btn btn-ghost"  onclick="clearSpill()">CLEAR SPILL</button>
+      <button class="btn btn-ghost" onclick="clearSpill()">CLEAR SPILL</button>
+      <button class="btn btn-danger" onclick="stopAlarm()">STOP ALARM</button>
     </div>
   </div>
   <div class="sec-head"><div class="sec-head-line"></div><div class="sec-title">ABOUT</div></div>
@@ -563,8 +750,111 @@ const DB={
   alerts:[],
   chartData:Array.from({length:18},()=>+(Math.random()*40+10).toFixed(1)),
   nextId:13,
-  spillOn:false
+  spillOn:false,
+  // Predictive risk data per zone
+  zoneRisks: {}
 };
+
+/* ── PREDICTIVE RISK CALCULATION ── */
+function calculateZoneRisks() {
+  const zones = {};
+  const now = Date.now();
+  
+  // Initialize zones
+  ZONES.forEach(zone => {
+    zones[zone] = {
+      sensors: [],
+      risk: 0,
+      factors: [],
+      trend: 'stable',
+      pressure: Math.random() * 100 + 50, // Simulated pressure reading
+      historical: []
+    };
+  });
+  
+  // Analyze each sensor
+  DB.sensors.forEach(sensor => {
+    if (!sensor.on) return;
+    
+    const zone = zones[sensor.zone];
+    zone.sensors.push(sensor);
+    
+    // Calculate risk factors
+    let sensorRisk = 0;
+    const factors = [];
+    
+    // Factor 1: Current value vs thresholds
+    if (sensor.val >= tCrit) {
+      sensorRisk += 40;
+      factors.push('Critical concentration');
+    } else if (sensor.val >= tWarn) {
+      sensorRisk += 20;
+      factors.push('High concentration');
+    }
+    
+    // Factor 2: Trend analysis (simulate with recent chart data)
+    const recentData = DB.chartData.slice(-6);
+    const avg = recentData.reduce((a,b) => a+b, 0) / recentData.length;
+    const trend = recentData[recentData.length-1] - recentData[0];
+    
+    if (Math.abs(trend) > 15) {
+      sensorRisk += 15;
+      factors.push(trend > 0 ? 'Rising trend' : 'Falling trend');
+      zone.trend = trend > 0 ? 'rising' : 'falling';
+    }
+    
+    // Factor 3: Pressure anomalies
+    const pressureVariance = Math.abs(zone.pressure - 75) / 75;
+    if (pressureVariance > 0.2) {
+      sensorRisk += 10;
+      factors.push('Pressure anomaly');
+    }
+    
+    // Factor 4: Historical patterns (simulate ML prediction)
+    const historicalRisk = Math.sin(now / 86400000) * 10 + Math.random() * 5;
+    sensorRisk += Math.max(0, historicalRisk);
+    
+    // Factor 5: Proximity to critical infrastructure
+    const criticalZones = ['C', 'H', 'K']; // Storage, Refinery, Pumping
+    if (criticalZones.includes(sensor.zone)) {
+      sensorRisk += 5;
+      factors.push('Critical infrastructure');
+    }
+    
+    zone.risk = Math.min(100, Math.max(zone.risk, sensorRisk));
+    zone.factors = [...new Set([...zone.factors, ...factors])];
+  });
+  
+  // Calculate overall zone risk
+  Object.keys(zones).forEach(zone => {
+    const z = zones[zone];
+    if (z.sensors.length === 0) {
+      z.risk = 0;
+      z.factors = ['No active sensors'];
+    } else {
+      // Weight by number of sensors and their individual risks
+      const avgSensorRisk = z.sensors.reduce((sum, s) => sum + (s.val >= tCrit ? 40 : s.val >= tWarn ? 20 : 5), 0) / z.sensors.length;
+      z.risk = Math.min(100, (z.risk + avgSensorRisk) / 2);
+    }
+  });
+  
+  DB.zoneRisks = zones;
+  return zones;
+}
+
+function getRiskColor(risk) {
+  if (risk >= 70) return '#ff3b5c'; // Critical red
+  if (risk >= 40) return '#ffb800'; // Warning amber
+  if (risk >= 20) return '#00d2ff'; // Info cyan
+  return '#00e5a0'; // Safe green
+}
+
+function getRiskLabel(risk) {
+  if (risk >= 70) return 'CRITICAL';
+  if (risk >= 40) return 'HIGH';
+  if (risk >= 20) return 'MEDIUM';
+  return 'LOW';
+}
 
 /* ── USERS & ZONES ── */
 const ZONES = ['A','B','C','D','E','F','G','H','I','J','K','L'];
@@ -585,25 +875,48 @@ const USERS = [
   {id:'e13', name:'Louisa Anima Apraku', role:'engineer', zone:'L'}
 ];
 
+const ENGINEERS = [
+  {id:'eng01',name:'Ahwiren Agnes Abrefi',zone:'A',status:'On Duty',assigned:null,responseTimes:[8,12,9]},
+  {id:'eng02',name:'Adu Gyamfi Beatrice',zone:'B',status:'On Duty',assigned:null,responseTimes:[10,11,9]},
+  {id:'eng03',name:'Adu Deborah Gyamfi',zone:'C',status:'On Duty',assigned:null,responseTimes:[9,8,7]},
+  {id:'eng04',name:'Adongo Richard Adiba',zone:'D',status:'On Duty',assigned:null,responseTimes:[11,13,10]},
+  {id:'eng05',name:'Buneraah Martin Anbanbieo',zone:'E',status:'En Route',assigned:null,responseTimes:[7,8,9]},
+  {id:'eng06',name:'Sapakbon Jennifer Yindaanpoka',zone:'F',status:'On Duty',assigned:null,responseTimes:[9,10,12]},
+  {id:'eng07',name:'Chukwuka Oluoma Marian',zone:'G',status:'On Duty',assigned:null,responseTimes:[10,9,11]},
+  {id:'eng08',name:'Boakye Egyima Nana Yaa',zone:'H',status:'Off Shift',assigned:null,responseTimes:[12,14,13]},
+  {id:'eng09',name:'Twumasi Christabel',zone:'I',status:'On Duty',assigned:null,responseTimes:[8,9,10]},
+  {id:'eng10',name:'Mensah Mary',zone:'J',status:'En Route',assigned:null,responseTimes:[7,11,10]},
+  {id:'eng11',name:'Anaba Jessica',zone:'K',status:'On Duty',assigned:null,responseTimes:[9,10,11]},
+  {id:'eng12',name:'Louisa Anima Apraku',zone:'L',status:'Off Shift',assigned:null,responseTimes:[14,12,13]},
+  {id:'eng13',name:'Kwame Appiah',zone:'M',status:'On Duty',assigned:null,responseTimes:[8,9,10]},
+  {id:'eng14',name:'Adwoa Mensah',zone:'N',status:'Off Shift',assigned:null,responseTimes:[13,14,12]}
+];
+
 const hardcodedUsers = [
-  {email: 'AmoahAnshel@ecoguard.com', password: 'UEBO529325', role: 'admin', name: 'Amoah Anshel', zone: 'ALL'},
-  {email: 'AhwirenAgnesAbrefi@ecoguard.com', password: 'UEB0532325', role: 'engineer', name: 'Ahwiren Agnes Abrefi', zone: 'A'},
-  {email: 'AduGyamfiBeatrice@ecoguard.com', password: 'UEB0516825', role: 'engineer', name: 'Adu Gyamfi Beatrice', zone: 'B'},
-  {email: 'AduDeborahGyamfi@ecoguard.com', password: 'UEBO511825', role: 'engineer', name: 'Adu Deborah Gyamfi', zone: 'C'},
-  {email: 'AdongoRichardAdiba@ecoguard.com', password: 'EUB0515025', role: 'engineer', name: 'Adongo Richard Adiba', zone: 'D'},
-  {email: 'BuneraahMartinAnbanbieo@ecoguard.com', password: 'UEB0523725', role: 'engineer', name: 'Buneraah Martin Anbanbieo', zone: 'E'},
-  {email: 'SapakbonJenniferYindaanpoka@ecoguard.com', password: 'UEB0531925', role: 'engineer', name: 'Sapakbon Jennifer Yindaanpoka', zone: 'F'},
-  {email: 'ChukwukaOluomaMarian@ecoguard.com', password: 'UEB0506925', role: 'engineer', name: 'Chukwuka Oluoma Marian', zone: 'G'},
-  {email: 'BoakyeEgyimaNanaYaa@ecoguard.com', password: 'UEB0523925', role: 'engineer', name: 'Boakye Egyima Nana Yaa', zone: 'H'},
-  {email: 'TwumasiChristabel@ecoguard.com', password: 'URB0522125', role: 'engineer', name: 'Twumasi Christabel', zone: 'I'},
-  {email: 'MensahMary@ecoguard.com', password: 'UEB0532625', role: 'engineer', name: 'Mensah Mary', zone: 'J'},
-  {email: 'AnabaJessica@ecoguard.com', password: 'UEB0531325', role: 'engineer', name: 'Anaba Jessica', zone: 'K'},
-  {email: 'LouisaAnimaApraku@ecoguard.com', password: 'UEB0519425', role: 'engineer', name: 'Louisa Anima Apraku', zone: 'L'}
+  {email: 'amoahAnshel@ecoguard.com', password: 'UEBO529325', role: 'admin', name: 'Amoah Anshel', zone: 'ALL'},
+  {email: 'ahwirenAgnesAbrefi@ecoguard.com', password: 'UEB0532325', role: 'engineer', name: 'Ahwiren Agnes Abrefi', zone: 'A'},
+  {email: 'aduGyamfiBeatrice@ecoguard.com', password: 'UEB0516825', role: 'engineer', name: 'Adu Gyamfi Beatrice', zone: 'B'},
+  {email: 'aduDeborahGyamfi@ecoguard.com', password: 'UEBO511825', role: 'engineer', name: 'Adu Deborah Gyamfi', zone: 'C'},
+  {email: 'adongoRichardAdiba@ecoguard.com', password: 'EUB0515025', role: 'engineer', name: 'Adongo Richard Adiba', zone: 'D'},
+  {email: 'buneraahMartinAnbanbieo@ecoguard.com', password: 'UEB0523725', role: 'engineer', name: 'Buneraah Martin Anbanbieo', zone: 'E'},
+  {email: 'sapakbonJenniferYindaanpoka@ecoguard.com', password: 'UEB0531925', role: 'engineer', name: 'Sapakbon Jennifer Yindaanpoka', zone: 'F'},
+  {email: 'chukwukaOluomaMarian@ecoguard.com', password: 'UEB0506925', role: 'engineer', name: 'Chukwuka Oluoma Marian', zone: 'G'},
+  {email: 'boakyeEgyimaNanaYaa@ecoguard.com', password: 'UEB0523925', role: 'engineer', name: 'Boakye Egyima Nana Yaa', zone: 'H'},
+  {email: 'twumasiChristabel@ecoguard.com', password: 'URB0522125', role: 'engineer', name: 'Twumasi Christabel', zone: 'I'},
+  {email: 'mensahMary@ecoguard.com', password: 'UEB0532625', role: 'engineer', name: 'Mensah Mary', zone: 'J'},
+  {email: 'anabaJessica@ecoguard.com', password: 'UEB0531325', role: 'engineer', name: 'Anaba Jessica', zone: 'K'},
+  {email: 'louisaAnimaApraku@ecoguard.com', password: 'UEB0519425', role: 'engineer', name: 'Louisa Anima Apraku', zone: 'L'}
 ];
 
 let currentUser = null;
 let timer=null, tWarn=80, tCrit=200, currentFilter='all';
 let audioCtx = null;
+let alarmOsc = null;
+let alarmGain = null;
+let alarmInterval = null;
+let alarmActive = false;
+let alarmVoiceInterval = null;
+let alarmMessage = '';
 
 /* ── AUDIO ENGINE ── */
 function initAudio(){
@@ -612,20 +925,165 @@ function initAudio(){
 
 function playAlarmSound(){
   if(!document.getElementById('n-audio').checked) return;
+  startAlarmSound();
+  if(alarmMessage) startAlarmVoice(alarmMessage);
+}
+
+function startAlarmSound(){
+  if(alarmActive) return;
+  if(!document.getElementById('n-audio').checked) return;
   if(!audioCtx) initAudio();
   if(audioCtx.state === 'suspended') audioCtx.resume();
-  
-  const osc = audioCtx.createOscillator();
-  const gain = audioCtx.createGain();
-  osc.type = 'sawtooth';
-  osc.frequency.setValueAtTime(440, audioCtx.currentTime);
-  osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.1);
-  gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
-  osc.connect(gain);
-  gain.connect(audioCtx.destination);
-  osc.start();
-  osc.stop(audioCtx.currentTime + 0.5);
+
+  alarmOsc = audioCtx.createOscillator();
+  alarmGain = audioCtx.createGain();
+  alarmOsc.type = 'sawtooth';
+  alarmOsc.frequency.setValueAtTime(320, audioCtx.currentTime);
+  alarmGain.gain.setValueAtTime(0.28, audioCtx.currentTime);
+  alarmOsc.connect(alarmGain);
+  alarmGain.connect(audioCtx.destination);
+  alarmOsc.start();
+
+  let up = true;
+  alarmInterval = setInterval(() => {
+    if(!alarmOsc) return;
+    const now = audioCtx.currentTime;
+    const targetFreq = up ? 880 : 340;
+    alarmOsc.frequency.cancelScheduledValues(now);
+    alarmOsc.frequency.setValueAtTime(targetFreq, now);
+    alarmGain.gain.cancelScheduledValues(now);
+    alarmGain.gain.setValueAtTime(up ? 0.32 : 0.18, now);
+    up = !up;
+  }, 240);
+  alarmActive = true;
+}
+
+function startAlarmVoice(message){
+  if(!document.getElementById('n-audio').checked) return;
+  alarmMessage = message || alarmMessage || 'Emergency, spill detected at unknown node.';
+  stopAlarmVoice();
+
+  const speak = () => {
+    const utterance = new SpeechSynthesisUtterance(alarmMessage);
+    utterance.rate = 0.95;
+    utterance.pitch = 0.95;
+    utterance.volume = 1.0;
+    utterance.lang = 'en-US';
+    window.speechSynthesis.speak(utterance);
+  };
+
+  speak();
+  alarmVoiceInterval = setInterval(() => {
+    if(document.hidden) return;
+    speak();
+  }, 7000);
+}
+
+function stopAlarmVoice(){
+  if(alarmVoiceInterval){
+    clearInterval(alarmVoiceInterval);
+    alarmVoiceInterval = null;
+  }
+  if(window.speechSynthesis){
+    window.speechSynthesis.cancel();
+  }
+}
+
+function stopAlarmSound(){
+  if(alarmInterval){
+    clearInterval(alarmInterval);
+    alarmInterval = null;
+  }
+  if(alarmOsc){
+    alarmOsc.stop(audioCtx.currentTime + 0.05);
+    alarmOsc.disconnect();
+    alarmOsc = null;
+  }
+  if(alarmGain){
+    alarmGain.disconnect();
+    alarmGain = null;
+  }
+  alarmActive = false;
+}
+
+function stopAlarm(){
+  stopAlarmSound();
+  stopAlarmVoice();
+  stopAlarmVisual();
+}
+
+const dashboardConfig = {
+  theme: 'modern',
+  showHotspots: true,
+  showStatus: true,
+  showLog: true,
+  showQuickActions: true
+};
+
+function saveDashboardPreferences(){
+  localStorage.setItem('ecoDashboardConfig', JSON.stringify(dashboardConfig));
+}
+
+function applyDashboardTheme(theme, save = true){
+  dashboardConfig.theme = theme || 'modern';
+  document.body.classList.toggle('classic-theme', theme === 'classic');
+  document.body.classList.toggle('high-contrast-theme', theme === 'high-contrast');
+  if(theme !== 'classic' && theme !== 'high-contrast'){
+    document.body.classList.remove('classic-theme', 'high-contrast-theme');
+  }
+  if(save) saveDashboardPreferences();
+  logLine('hi', `Dashboard theme set to ${dashboardConfig.theme}`);
+}
+
+function toggleDashboardPanel(key){
+  dashboardConfig[key] = !dashboardConfig[key];
+  saveDashboardPreferences();
+  applyDashboardLayout();
+}
+
+function applyDashboardLayout(){
+  const hotspot = document.getElementById('hotspot-panel');
+  const status = document.getElementById('dash-status-panel');
+  const log = document.getElementById('log-panel');
+  const quick = document.getElementById('dash-quick-actions');
+  if(hotspot) hotspot.style.display = dashboardConfig.showHotspots ? 'block' : 'none';
+  if(status) status.style.display = dashboardConfig.showStatus ? 'flex' : 'none';
+  if(log) log.style.display = dashboardConfig.showLog ? 'block' : 'none';
+  if(quick) quick.style.display = dashboardConfig.showQuickActions ? 'block' : 'none';
+}
+
+function loadDashboardPreferences(){
+  try {
+    const stored = JSON.parse(localStorage.getItem('ecoDashboardConfig') || '{}');
+    Object.assign(dashboardConfig, stored);
+  } catch(e) {
+    console.warn('Unable to load dashboard preferences', e);
+  }
+  const themeSelect = document.getElementById('theme-select');
+  if(themeSelect) themeSelect.value = dashboardConfig.theme || 'modern';
+  applyDashboardTheme(dashboardConfig.theme, false);
+  const hotspot = document.getElementById('show-hotspots');
+  const status = document.getElementById('show-status');
+  const log = document.getElementById('show-log');
+  const quick = document.getElementById('show-quick-actions');
+  if(hotspot) hotspot.checked = dashboardConfig.showHotspots;
+  if(status) status.checked = dashboardConfig.showStatus;
+  if(log) log.checked = dashboardConfig.showLog;
+  if(quick) quick.checked = dashboardConfig.showQuickActions;
+  applyDashboardLayout();
+}
+
+function refreshDashboard(){
+  scan();
+  render();
+  logLine('hi','Dashboard refreshed');
+}
+
+function muteAlarm(){
+  document.getElementById('n-audio').checked = false;
+  stopAlarmSound();
+  toast({sev:'info',title:'ALARM MUTED',detail:'Audio alerts have been silenced.'});
+  logLine('hi','Alarm audio muted from dashboard');
 }
 
 /* ── AUTH LOGIC ── */
@@ -704,8 +1162,14 @@ function fire(sev,sensor){
   if(DB.alerts.length>120)DB.alerts.pop();
   toast(al);
   if(sev==='critical'){
-    if(document.getElementById('n-vis').checked)flashAlarm();
-    if(document.getElementById('n-audio').checked)playAlarmSound();
+    if(document.getElementById('n-vis').checked)startAlarmVisual();
+    if(document.getElementById('n-audio').checked){
+      const target = sensor.name || sensor.zone || sensor.id;
+      const msg = `Emergency, spillage detected at ${target}.`; 
+      alarmMessage = msg;
+      startAlarmSound();
+      startAlarmVoice(msg);
+    }
   }
   updateBadge();
   logLine(sev==='critical'?'err':'warn',`${al.title} — ${al.detail}`);
@@ -719,6 +1183,9 @@ function render(){
   const av=avgPpm();
   const up=Math.round(ac.length/visibleSensors.length*100);
   
+  // Calculate predictive risks
+  const zoneRisks = calculateZoneRisks();
+  
   document.getElementById('m-nodes').textContent=ac.length;
   document.getElementById('m-nodes-sub').textContent=`${visibleSensors.length-ac.length} offline`;
   document.getElementById('m-conc').textContent=av.toFixed(0);
@@ -729,6 +1196,8 @@ function render(){
   document.getElementById('zone-sub').textContent=ac.length===visibleSensors.length?'All zones active':`${visibleSensors.length-ac.length} zone(s) offline`;
   
   renderChart();renderHotspots();renderMap();
+  updateEngineerStatuses();
+  renderEngineerPanel();
   if(document.getElementById('page-sensors').classList.contains('active'))renderSensors();
   if(document.getElementById('page-alerts').classList.contains('active'))renderAlerts(currentFilter);
   if(document.getElementById('page-map').classList.contains('active'))renderZoneTable();
@@ -805,7 +1274,54 @@ function renderAlerts(f){
   if(f==='warning')list=list.filter(a=>a.sev==='warning');
   const el=document.getElementById('alert-list');
   if(!list.length){el.innerHTML='<p style="color:var(--text3);font-size:12px;font-family:var(--mono);text-align:center;padding:28px">NO ALERTS RECORDED</p>';return;}
-  el.innerHTML=list.map(a=>`<div class="a-item a-${a.sev==='critical'?'crit':a.sev==='warning'?'warn':'info'}"><div class="a-icon">${a.sev==='critical'?'🚨':'⚠️'}</div><div style="flex:1"><div class="a-title">${a.title}</div><div class="a-detail">${a.detail}</div><div class="a-time">${a.time} · NODE ${a.sensor}</div></div></div>`).join('');
+  el.innerHTML=list.map(a=>{
+    const sensor = DB.sensors.find(s => s.id === a.sensor);
+    const explanation = generateAnomalyExplanation(a, sensor);
+    return `<div class="a-item a-${a.sev==='critical'?'crit':a.sev==='warning'?'warn':'info'}" title="${explanation}">
+      <div class="a-icon">${a.sev==='critical'?'🚨':'⚠️'}</div>
+      <div style="flex:1">
+        <div class="a-title">${a.title}</div>
+        <div class="a-detail">${a.detail}</div>
+        <div class="a-time">${a.time} · NODE ${a.sensor}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function generateAnomalyExplanation(alert, sensor) {
+  if (!sensor) return 'Sensor data unavailable';
+
+  const value = sensor.val;
+  const threshold = alert.sev === 'critical' ? tCrit : tWarn;
+  const exceedance = ((value - threshold) / threshold * 100).toFixed(0);
+
+  let explanation = `${sensor.name} exceeded threshold by ${exceedance}%`;
+
+  // Add contextual analysis
+  if (sensor.type.includes('Conductivity')) {
+    explanation += ' — possible chemical contamination or equipment malfunction in ';
+  } else if (sensor.type.includes('Fluorescence')) {
+    explanation += ' — potential hydrocarbon leak detected in ';
+  } else if (sensor.type.includes('PAH')) {
+    explanation += ' — aromatic hydrocarbon levels elevated in ';
+  } else if (sensor.type.includes('Spectrometry')) {
+    explanation += ' — infrared signature indicates possible vapor release in ';
+  } else {
+    explanation += ' — sensor anomaly detected in ';
+  }
+
+  explanation += sensor.loc.toLowerCase();
+
+  // Add risk assessment
+  const zoneRisk = DB.zoneRisks[sensor.zone];
+  if (zoneRisk && zoneRisk.factors.length > 0) {
+    const keyFactors = zoneRisk.factors.slice(0, 2);
+    if (keyFactors.length > 0) {
+      explanation += `. Contributing factors: ${keyFactors.join(', ')}`;
+    }
+  }
+
+  return explanation;
 }
 function filterAl(f){renderAlerts(f);}
 function clearAl(){DB.alerts=[];renderAlerts('all');updateBadge();}
@@ -826,8 +1342,148 @@ function renderMap(){
 }
 
 function renderZoneTable(){
+  const zoneRisks = DB.zoneRisks;
   const visible = getVisibleSensors();
-  document.getElementById('zone-tbl').innerHTML=`<table class="tbl"><thead><tr><th>NODE</th><th>LOCATION</th><th style="text-align:right">PPM</th><th style="text-align:right">STATUS</th></tr></thead><tbody>${visible.map(s=>{let bc='b-safe',bt='SAFE';if(!s.on){bc='b-info';bt='OFFLINE';}else if(s.val>=tCrit){bc='b-crit';bt='CRITICAL';}else if(s.val>=tWarn){bc='b-warn';bt='WARNING';}return`<tr><td>${s.id}</td><td>${s.loc.split('—')[0].trim()}</td><td style="text-align:right">${s.val.toFixed(0)}</td><td style="text-align:right"><span class="badge ${bc}"><div class="badge-dot"></div>${bt}</span></td></tr>`;}).join('')}</tbody></table>`;
+
+  document.getElementById('zone-tbl').innerHTML=`<table class="tbl"><thead><tr><th>ZONE</th><th>SENSORS</th><th>RISK SCORE</th><th>RISK GAUGE</th><th>STATUS</th></tr></thead><tbody>${ZONES.map(zone=>{
+    const risk = zoneRisks[zone] || {risk: 0, sensors: [], factors: []};
+    const zoneSensors = visible.filter(s => s.zone === zone);
+    const activeSensors = zoneSensors.filter(s => s.on);
+    const riskColor = getRiskColor(risk.risk);
+    const riskLabel = getRiskLabel(risk.risk);
+
+    return `<tr>
+      <td><strong>${zone}</strong></td>
+      <td>${activeSensors.length}/${zoneSensors.length} active</td>
+      <td style="text-align:center;font-weight:600;color:${riskColor}">${Math.round(risk.risk)}%</td>
+      <td style="text-align:center">
+        <div class="risk-gauge" style="position:relative;width:60px;height:8px;background:#333;border-radius:4px;margin:0 auto;overflow:hidden;">
+          <div style="width:${risk.risk}%;height:100%;background:${riskColor};border-radius:4px;transition:width 0.3s ease;"></div>
+        </div>
+      </td>
+      <td><span class="badge ${risk.risk >= 70 ? 'b-crit' : risk.risk >= 40 ? 'b-warn' : risk.risk >= 20 ? 'b-info' : 'b-safe'}"><div class="badge-dot"></div>${riskLabel}</span></td>
+    </tr>`;
+  }).join('')}</tbody></table>`;
+}
+
+function getActiveIncidents(){
+  let list = DB.alerts.filter(a=>a.sev==='critical');
+  if(currentUser.role !== 'admin'){
+    list = list.filter(a=>{const s=DB.sensors.find(x=>x.id===a.sensor);return s&&s.zone===currentUser.zone;});
+  }
+  return list;
+}
+
+function getIncidentLabel(id){
+  const incident = DB.alerts.find(a=>a.id===id);
+  return incident ? incident.title : `Incident ${id}`;
+}
+
+function getAverageResponseTime(){
+  const times = ENGINEERS.flatMap(e=>e.responseTimes||[]);
+  if(!times.length) return 0;
+  return (times.reduce((sum,val)=>sum+val,0)/times.length).toFixed(1);
+}
+
+function renderEngineerPanel(){
+  const listEl = document.getElementById('engineer-list');
+  const engineerSelect = document.getElementById('assign-engineer');
+  const incidentSelect = document.getElementById('assign-incident');
+  const assignmentControls = document.getElementById('assignment-controls');
+  const assignmentButtons = document.getElementById('assignment-buttons');
+  if(!listEl || !engineerSelect || !incidentSelect) return;
+  const activeIncidents = getActiveIncidents();
+  const onDuty = ENGINEERS.filter(e=>e.status==='On Duty').length;
+  const enRoute = ENGINEERS.filter(e=>e.status==='En Route').length;
+  const offShift = ENGINEERS.filter(e=>e.status==='Off Shift').length;
+  document.getElementById('engineer-availability').textContent = `${onDuty} On Duty · ${enRoute} En Route · ${offShift} Off Shift`;
+  document.getElementById('engineer-response').textContent = `${getAverageResponseTime()} min`;
+  listEl.innerHTML = ENGINEERS.map(e=>{
+    const assigned = e.assigned ? `Assigned to ${getIncidentLabel(e.assigned)}` : 'No assignment';
+    const badgeClass = e.status==='On Duty' ? 'b-safe' : e.status==='En Route' ? 'b-amber' : 'b-info';
+    return `<div class="engineer-row"><div><div class="engineer-name">${e.name}</div><div class="engineer-meta">Zone ${e.zone} · ${assigned}</div></div><div><span class="badge ${badgeClass}"><div class="badge-dot"></div>${e.status.toUpperCase()}</span></div></div>`;
+  }).join('');
+  const isAdmin = currentUser && currentUser.role === 'admin';
+  if(assignmentControls) assignmentControls.style.display = isAdmin ? 'grid' : 'none';
+  if(assignmentButtons) assignmentButtons.style.display = isAdmin ? 'flex' : 'none';
+  if(isAdmin){
+    engineerSelect.innerHTML = ENGINEERS.map(e=>`<option value="${e.id}">${e.name} (${e.status})</option>`).join('');
+    incidentSelect.innerHTML = activeIncidents.length
+      ? activeIncidents.map(a=>`<option value="${a.id}">${a.title}</option>`).join('')
+      : '<option value="">No active incidents</option>';
+  }
+}
+
+function assignSelectedEngineer(){
+  if(!currentUser || currentUser.role !== 'admin'){
+    toast({sev:'warning',title:'ACCESS DENIED',detail:'Only administrators can assign engineers.'});
+    return;
+  }
+  const engineerId = document.getElementById('assign-engineer').value;
+  const incidentId = document.getElementById('assign-incident').value;
+  if(!engineerId || !incidentId){
+    toast({sev:'warning',title:'ASSIGNMENT INCOMPLETE',detail:'Select both an engineer and an active incident.'});
+    return;
+  }
+  const engineer = ENGINEERS.find(e=>e.id===engineerId);
+  const incident = DB.alerts.find(a=>a.id.toString()===incidentId.toString());
+  if(!engineer || !incident){
+    toast({sev:'warning',title:'ASSIGNMENT FAILED',detail:'Unable to locate selected engineer or incident.'});
+    return;
+  }
+  engineer.assigned = incident.id;
+  engineer.status = 'En Route';
+  const responseMinutes = Math.round(Math.random()*5 + 6);
+  engineer.responseTimes.push(responseMinutes);
+  incident.assignedTo = engineer.id;
+  incident.assignedAt = Date.now();
+  renderEngineerPanel();
+  toast({sev:'info',title:'ENGINEER ASSIGNED',detail:`${engineer.name} is en route to ${incident.title}`});
+  logLine('hi', `Assigned ${engineer.name} to ${incident.title}`);
+}
+
+function clearSelectedEngineerAssignment(){
+  if(!currentUser || currentUser.role !== 'admin'){
+    toast({sev:'warning',title:'ACCESS DENIED',detail:'Only administrators can clear assignments.'});
+    return;
+  }
+  const engineerId = document.getElementById('assign-engineer').value;
+  if(!engineerId){
+    toast({sev:'warning',title:'CLEAR FAILED',detail:'Select an engineer to clear the assignment.'});
+    return;
+  }
+  const engineer = ENGINEERS.find(e=>e.id===engineerId);
+  if(!engineer){
+    toast({sev:'warning',title:'CLEAR FAILED',detail:'Engineer not found.'});
+    return;
+  }
+  if(!engineer.assigned){
+    toast({sev:'info',title:'NO ASSIGNMENT',detail:`${engineer.name} has no active assignment.`});
+    return;
+  }
+  const previousAssignment = engineer.assigned;
+  const incident = DB.alerts.find(a=>a.id===previousAssignment);
+  engineer.assigned = null;
+  if(engineer.status === 'En Route'){
+    engineer.status = 'On Duty';
+  }
+  if(incident){
+    delete incident.assignedTo;
+    delete incident.assignedAt;
+  }
+  renderEngineerPanel();
+  toast({sev:'info',title:'ASSIGNMENT CLEARED',detail:`${engineer.name} is now unassigned.`});
+  logLine('hi', `Cleared assignment for ${engineer.name}`);
+}
+
+function updateEngineerStatuses(){
+  ENGINEERS.forEach(e=>{
+    if(e.assigned && e.status==='En Route'){
+      // Keep en route until manually cleared or reassigned.
+    } else if(!e.assigned && e.status==='En Route'){
+      e.status = 'On Duty';
+    }
+  });
 }
 
 function renderReports(){
@@ -855,6 +1511,104 @@ function exportJSON(){
   dl(new Blob([JSON.stringify({ts:new Date().toISOString(),sensors:DB.sensors,alerts:DB.alerts,avgPpm:avgPpm().toFixed(2)},null,2)],{type:'application/json'}),`ecoguard_${Date.now()}.json`);
   toast({sev:'info',title:'JSON EXPORTED',detail:'Full dataset saved'});
 }
+
+function exportPDF(){
+  // Create PDF content
+  const reportData = generateReportData();
+  const pdfContent = generatePDFContent(reportData);
+
+  // For now, we'll create a simple text-based PDF
+  // In a real implementation, you'd use jsPDF or similar library
+  const blob = new Blob([pdfContent], {type: 'text/plain'});
+  dl(blob, `ecoguard_report_${new Date().toISOString().split('T')[0]}.txt`);
+
+  toast({sev:'info',title:'REPORT EXPORTED',detail:'Dashboard snapshot saved as text report'});
+}
+
+function generateReportData(){
+  const visibleSensors = getVisibleSensors();
+  const activeSensors = visibleSensors.filter(s => s.on);
+  const criticalAlerts = DB.alerts.filter(a => a.sev === 'critical');
+  const zoneRisks = DB.zoneRisks;
+
+  return {
+    timestamp: new Date().toLocaleString(),
+    user: currentUser.name,
+    summary: {
+      totalSensors: visibleSensors.length,
+      activeSensors: activeSensors.length,
+      avgConcentration: avgPpm().toFixed(1),
+      criticalIncidents: criticalAlerts.length,
+      uptime: Math.round(activeSensors.length / visibleSensors.length * 100)
+    },
+    zoneRisks: Object.entries(zoneRisks).map(([zone, data]) => ({
+      zone,
+      riskScore: Math.round(data.risk),
+      riskLevel: getRiskLabel(data.risk),
+      activeSensors: data.sensors.filter(s => s.on).length,
+      totalSensors: data.sensors.length,
+      factors: data.factors
+    })),
+    recentAlerts: DB.alerts.slice(0, 10).map(a => ({
+      time: a.time,
+      sensor: a.sensor,
+      severity: a.sev,
+      title: a.title,
+      detail: a.detail
+    })),
+    engineerStatus: ENGINEERS.map(e => ({
+      name: e.name,
+      zone: e.zone,
+      status: e.status,
+      assigned: e.assigned || 'None',
+      avgResponseTime: e.responseTimes ? (e.responseTimes.reduce((a,b) => a+b, 0) / e.responseTimes.length).toFixed(1) : 'N/A'
+    }))
+  };
+}
+
+function generatePDFContent(data){
+  let content = `ECOGUARD PIPELINE SECURITY REPORT
+Generated: ${data.timestamp}
+Operator: ${data.user}
+
+EXECUTIVE SUMMARY
+=================
+Total Sensors: ${data.summary.totalSensors}
+Active Sensors: ${data.summary.activeSensors}
+Average Concentration: ${data.summary.avgConcentration} ppm
+Critical Incidents: ${data.summary.criticalIncidents}
+System Uptime: ${data.summary.uptime}%
+
+ZONE RISK ASSESSMENT
+====================\n`;
+
+  data.zoneRisks.forEach(zone => {
+    content += `Zone ${zone.zone}:
+  Risk Score: ${zone.riskScore}% (${zone.riskLevel})
+  Sensors: ${zone.activeSensors}/${zone.totalSensors} active
+  Risk Factors: ${zone.factors.join(', ') || 'None identified'}\n\n`;
+  });
+
+  content += `RECENT ALERTS
+=============\n`;
+  data.recentAlerts.forEach(alert => {
+    content += `${alert.time} - ${alert.sensor} (${alert.severity.toUpperCase()})
+  ${alert.title}
+  ${alert.detail}\n\n`;
+  });
+
+  content += `ENGINEER STATUS
+===============\n`;
+  data.engineerStatus.forEach(eng => {
+    content += `${eng.name} (Zone ${eng.zone})
+  Status: ${eng.status}
+  Assignment: ${eng.assigned}
+  Avg Response Time: ${eng.avgResponseTime} minutes\n\n`;
+  });
+
+  return content;
+}
+
 function dl(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();}
 
 function simSpill(){
@@ -862,14 +1616,17 @@ function simSpill(){
   ['S03','S06','S09'].forEach(id=>{const s=DB.sensors.find(x=>x.id===id);if(s)s.val=260;});
   logLine('err','SIMULATION: Spill event triggered — Zones C, F, I');
   toast({sev:'critical',title:'SIMULATION ACTIVE',detail:'Spill event on 3 critical zones'});
-  flashAlarm();
-  playAlarmSound();
+  alarmMessage = 'Emergency, spillage detected on Lambda Node, Charlie Node and India Node.';
+  startAlarmVisual();
+  startAlarmSound();
+  startAlarmVoice(alarmMessage);
 }
 function clearSpill(){
   DB.spillOn=false;
   DB.sensors.forEach(s=>{if(s.val>100)s.val=+(Math.random()*30+10).toFixed(1);});
   logLine('hi','All-clear issued — spill simulation ended');
   toast({sev:'info',title:'ALL CLEAR',detail:'Simulation cleared. System nominal.'});
+  stopAlarm();
 }
 
 /* ── WHATSAPP STYLE TOAST ── */
@@ -896,7 +1653,17 @@ function toast(al){
   setTimeout(()=>el.remove(),5000);
 }
 
-function flashAlarm(){const a=document.getElementById('alarm');a.style.display='block';setTimeout(()=>{a.style.display='none';},5000);}
+function flashAlarm(){startAlarmVisual();}
+
+function startAlarmVisual(){
+  const a=document.getElementById('alarm');
+  if(a){a.style.display='block';}
+}
+
+function stopAlarmVisual(){
+  const a=document.getElementById('alarm');
+  if(a){a.style.display='none';}
+}
 
 const logLines=[];
 function logLine(type,msg){
@@ -924,6 +1691,7 @@ function restartEngine(){
 }
 
 function init(){
+  loadDashboardPreferences();
   logLine('hi','EcoGuard v3.0 initialized');
   logLine('hi','12 sensor nodes online and scanning');
   logLine('hi','Real-time detection engine active');
